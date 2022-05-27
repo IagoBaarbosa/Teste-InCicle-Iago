@@ -1,12 +1,26 @@
-import React from "react";
+import * as React from "react";
+import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import { MainContainer } from "./Main.style";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
+import Item from "@mui/material/Grid";
+import HeaderMain from "../HeaderMain";
+import MainRight from "../MainRight";
 
-function Main({ children }) {
+function Main() {
   return (
-    <MainContainer gutter="30px" container="1230px">
-      {children}
-    </MainContainer>
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
+        <Grid item xs={8}>
+          <div>
+            <HeaderMain />
+          </div>
+        </Grid>
+        <Grid item xs={4}>
+          <MainRight />
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
 
