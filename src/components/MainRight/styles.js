@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 90%;
-  margin: 100px;
+  margin: 80px;
   padding: rem 1rem;
   display: flex;
   flex-direction: column;
@@ -10,14 +10,10 @@ export const Container = styled.div`
   justify-content: center;
   border-radius: 5px;
   background: #fff2de;
-  @media (max-width: 1115px) {
-    width: 80%;
-    margin: 1rem;
-  }
 
   button {
     width: 112px;
-    height: 39px;
+    height: 40px;
     font-family: Roboto;
     font-size: 14px;
     color: #707070;
@@ -25,7 +21,7 @@ export const Container = styled.div`
     border-width: 1px;
     border-radius: 0.2rem;
     padding: 0.3rem 1rem;
-    margin: 0.1rem 1rem;
+    margin: 2rem 1rem;
 
     transition: filter 0.2s;
 
@@ -50,7 +46,7 @@ export const Title = styled.h2`
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 30px;
   margin: 0.1rem 1rem;
 `;
 
@@ -63,6 +59,6 @@ export const Text = styled.strong`
   justify-content: justify;
   font-weight: 300;
   font-size: 17px;
-  line-height: 20px;
-  margin: 0.1rem 1rem;
+  line-height: 25px;
+  margin: 0.8rem 1rem;
 `;

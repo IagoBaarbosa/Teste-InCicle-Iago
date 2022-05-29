@@ -9,13 +9,13 @@ import { Box } from "@mui/system";
 function Cardz(props) {
   console.log(props);
   return (
-    <Card sx={{ display: "flex", height: 90, width: 800, margin: 1 }}>
-      <Box sx={{ display: "flex", height: 90, width: 73 }}>
+    <Card sx={{ display: "flex", height: 120, width: 800, margin: 1 }}>
+      <Box sx={{ display: "flex", height: 19, width: 73 }}>
         <CardContent sx={{ display: "flex", flexDirection: "right" }}>
           <Typography component="div" variant="h6"></Typography>
           <CardMedia
             component="img"
-            sx={{ width: 150, height: 70 }}
+            sx={{ width: 150, height: 100 }}
             image={props.item.file.url}
             alt="img"
           />
@@ -43,7 +43,6 @@ function Cardz(props) {
           fontSize: "12px",
           fontStyle: "normal",
           color: "#707070",
-
           margin: "1px",
           padding: "35px 200px",
           position: "absolute",

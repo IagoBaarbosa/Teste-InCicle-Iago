@@ -18,9 +18,16 @@ function MainRight() {
 }
 
 function BoxDireitaCima() {
+  const management = require("../../assets/data/management.json");
+  console.log(management.data);
   return (
     <>
-      <Container>
+      <Container
+        style={{
+          margin: "80px",
+          height: "350px",
+        }}
+      >
         <BoxTitle>
           <Title>Endomarketing</Title>
         </BoxTitle>
@@ -29,16 +36,41 @@ function BoxDireitaCima() {
           dos colaboradores da empresa visando um melhor serviço para clente.
           Marketing interno, devido ao nome é usualmente confundido com
           Endomarketing mesmo sendo conceitos diferentes.
+          <button type="button">DISPENSAR</button>
         </Text>
-        <br></br>
-        <button type="button">DISPENSAR</button>
       </Container>
-      <Container>
+
+      <Container
+        style={{
+          background: "#FFF",
+          margin: "80px",
+          height: "230px",
+        }}
+      >
         <BoxTitle>
           <Title>Quadros de gestao a vista</Title>
         </BoxTitle>
-        <Text>Demonstraçao comercial</Text>
-        <img src={logo} alt="Logo da InCicle" width={100} />
+        <div>
+          <Text>Demonstraçao comercial</Text>
+          <br></br>
+          <img src={logo} alt="Logo da InCicle" width={90} />
+          <img src={logo} alt="Logo da InCicle" width={90} />
+          <img src={logo} alt="Logo da InCicle" width={90} />
+        </div>
+        <div>
+          <Text>Demonstraçao comercial</Text>
+          <br></br>
+          <img src={logo} alt="Logo da InCicle" width={90} />
+          <img src={logo} alt="Logo da InCicle" width={90} />
+          <img src={logo} alt="Logo da InCicle" width={90} />
+        </div>
+        <div>
+          <Text>Demonstraçao comercial</Text>
+          <br></br>
+          <img src={logo} alt="Logo da InCicle" width={90} />
+          <img src={logo} alt="Logo da InCicle" width={90} />
+          <img src={logo} alt="Logo da InCicle" width={90} />
+        </div>
       </Container>
     </>
   );
