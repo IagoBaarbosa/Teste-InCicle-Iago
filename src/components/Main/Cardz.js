@@ -1,56 +1,75 @@
-import { useTheme } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import SkipNextIcon from "@mui/icons-material/SkipNext";
 import { Box } from "@mui/system";
 
-/////// Cardz ///////
+/////// Cardz Esquerda ///////
 
-function Cardz() {
-  const theme = useTheme();
-
+function Cardz(props) {
+  console.log(props);
   return (
-    <Card sx={{ display: "flex", height: 90, width: 738 }}>
-      <Box sx={{ display: "flex", height: 90, width: 738 }}>
+    <Card sx={{ display: "flex", height: 90, width: 800, margin: 1 }}>
+      <Box sx={{ display: "flex", height: 90, width: 73 }}>
         <CardContent sx={{ display: "flex", flexDirection: "right" }}>
           <Typography component="div" variant="h6"></Typography>
-          <Typography
-            variant="subtitle1"
-            color="text.secondary"
-            component="div"
-          ></Typography>
+          <CardMedia
+            component="img"
+            sx={{ width: 150, height: 70 }}
+            image={props.item.file.url}
+            alt="img"
+          />
         </CardContent>
-        <Box sx={{ display: "flex", alignItems: "center", pl: 10, pb: 10 }}>
-          <IconButton aria-label="previous">
-            {theme.direction === "rtl" ? (
-              <SkipNextIcon />
-            ) : (
-              <SkipPreviousIcon />
-            )}
-          </IconButton>
-          <IconButton aria-label="play/pause">
-            <PlayArrowIcon sx={{ height: 30, width: 380 }} />
-          </IconButton>
-          <IconButton aria-label="next">
-            {theme.direction === "rtl" ? (
-              <SkipPreviousIcon />
-            ) : (
-              <SkipNextIcon />
-            )}
-          </IconButton>
-        </Box>
+        <p
+          style={{
+            fontFamily: "Roboto",
+            fontSize: "16px",
+            fontStyle: "normal",
+            color: "#707070",
+            margin: "1px",
+            padding: "15px 200px",
+            position: "absolute",
+            width: "999px",
+            height: "999px",
+            textAlign: "left",
+          }}
+        >
+          {props.item.title}
+        </p>
       </Box>
-      <CardMedia
-        component="img"
-        sx={{ width: 151 }}
-        image="/static/images/cards/live-from-space.jpg"
-        alt="Live from space album cover"
-      />
+      <p
+        style={{
+          fontFamily: "Open Sans",
+          fontSize: "12px",
+          fontStyle: "normal",
+          color: "#707070",
+
+          margin: "1px",
+          padding: "35px 200px",
+          position: "absolute",
+          width: "999px",
+          height: "999px",
+          textAlign: "left",
+        }}
+      >
+        {props.item.type}
+      </p>
+      <p
+        style={{
+          fontFamily: "Open Sans",
+          fontSize: "12px",
+          fontStyle: "normal",
+          color: "#707070",
+          margin: "1px",
+          padding: "50px 200px",
+          position: "absolute",
+          width: "999px",
+          height: "999px",
+          textAlign: "left",
+        }}
+      >
+        {props.item.description}
+      </p>
     </Card>
   );
 }

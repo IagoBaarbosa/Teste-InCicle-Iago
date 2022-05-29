@@ -7,34 +7,32 @@ import {
   Select,
   MenuItem,
   Button,
+  Container,
 } from "@mui/material";
 import Cardz from "../Main/Cardz";
 
 function HeaderMain() {
+  const dataJson = require("../../assets/data/data.json");
+  console.log(dataJson.data);
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={6}>
-          <div>
-            <p>Endomarketing</p>
-          </div>
+    <Container>
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <div>
+              <p>Endomarketing</p>
+            </div>
+          </Grid>
+          <Grid item xs={6}>
+            <BotaoTipo />
+          </Grid>
         </Grid>
-        <Grid item xs={6}>
-          <BotaoTipo />
-        </Grid>
-      </Grid>
-      <Cardz />
-      <br />
-      <Cardz />
-      <br />
-      <Cardz />
-      <br />
-      <Cardz />
-      <br />
-      <Cardz />
-      <br />
-      <Cardz />
-    </Box>
+        {dataJson.data.map((item, index) => {
+          return <Cardz item={item} />;
+        })}
+      </Box>
+    </Container>
   );
 }
 /// nome e botao  //
@@ -42,7 +40,7 @@ function HeaderMain() {
 function BotaoTipo() {
   return (
     <div>
-      <FormControl sx={{ m: 1, minWidth: 90, marginLeft: "40%" }}>
+      <FormControl sx={{ m: 1, minWidth: 90, marginLeft: "38%" }}>
         <InputLabel id="demo-simple-select-autowidth-label">TIPO</InputLabel>
         <Select
           labelId="demo-simple-select-autowidth-label"
