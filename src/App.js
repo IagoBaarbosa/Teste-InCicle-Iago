@@ -1,7 +1,16 @@
+import * as React from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer/index";
+import Main from "./components/Main";
+
 function App() {
   return (
     <>
-      <h1>Iniciando Teste para InCicle</h1>
+      <h1>
+        <Header />
+        <Main />
+        <Footer />
+      </h1>
     </>
   );
 }
