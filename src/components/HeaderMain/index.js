@@ -1,5 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
+import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
 import {
   FormControl,
@@ -20,9 +21,18 @@ function HeaderMain() {
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           <Grid item xs={6}>
-            <div>
-              <p>Endomarketing</p>
-            </div>
+            <p
+              style={{
+                fontFamily: "Open Sans",
+                fontSize: "35px",
+                fontStyle: "normal",
+                color: "#707070",
+                fontWeight: "300",
+                padding: "15px",
+              }}
+            >
+              Endomarketing
+            </p>
           </Grid>
           <Grid item xs={6}>
             <BotaoTipo />
@@ -50,22 +60,34 @@ function BotaoTipo() {
           autoWidth
           label="Age"
         >
-          <MenuItem value="">
-            <em>None</em>
+          <MenuItem value=""></MenuItem>
+          <MenuItem value={10}>
+            Event
+            <CaixaSelecao />
           </MenuItem>
-          <MenuItem value={10}>Twenty</MenuItem>
-          <MenuItem value={21}>Twenty one</MenuItem>
-          <MenuItem value={22}>Twenty one and a half</MenuItem>
+          <MenuItem value={21}>
+            Release
+            <CaixaSelecao />
+          </MenuItem>
+          <MenuItem value={22}>
+            Publication
+            <CaixaSelecao />
+          </MenuItem>
         </Select>
       </FormControl>
 
-      <FormControl sx={{ m: 1, minWidth: 90, marginLeft: "1%" }}>
-        <Button sx={{ m: 1, minWidth: 90 }} variant="contained">
+      <FormControl sx={{ m: 1, minWidth: 9, marginLeft: "1%" }}>
+        <Button sx={{ m: 0.1, minHeight: 54 }} variant="contained">
           CRIAR +
         </Button>
       </FormControl>
     </div>
   );
+}
+
+const label = { inputProps: { "aria-label": "Checkbox demo" } };
+function CaixaSelecao() {
+  return <Checkbox {...label} />;
 }
 
 export default HeaderMain;

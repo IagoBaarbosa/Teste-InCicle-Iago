@@ -3,6 +3,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/system";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 /////// Cardz Esquerda ///////
 
@@ -32,6 +33,7 @@ function Cardz(props) {
             width: "999px",
             height: "999px",
             textAlign: "left",
+            lineHeight: "18.75px",
           }}
         >
           {props.item.title}
@@ -40,7 +42,7 @@ function Cardz(props) {
       <p
         style={{
           fontFamily: "Open Sans",
-          fontSize: "12px",
+          fontSize: "9px",
           fontStyle: "normal",
           color: "#707070",
           margin: "1px",
@@ -49,13 +51,15 @@ function Cardz(props) {
           width: "999px",
           height: "999px",
           textAlign: "left",
+          lineHeight: "13px",
         }}
       >
-        {props.item.type}
+        {props.item.type}|{props.item.info.place}|{props.item.info.date}
       </p>
       <p
         style={{
           fontFamily: "Open Sans",
+          fontWeight: "normal",
           fontSize: "12px",
           fontStyle: "normal",
           color: "#707070",
@@ -63,11 +67,20 @@ function Cardz(props) {
           padding: "50px 200px",
           position: "absolute",
           width: "999px",
-          height: "999px",
           textAlign: "left",
         }}
       >
         {props.item.description}
+        <button
+          style={{
+            border: "none",
+            borderWidth: "0.1rem",
+            borderRadius: "0.9rem",
+            background: "#DBDBDB",
+          }}
+        >
+          <MoreHorizIcon />
+        </button>
       </p>
     </Card>
   );
